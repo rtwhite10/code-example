@@ -17,10 +17,9 @@ export function getData() {
       })
     })
   }
-}
 
 export function filterData(data) {
-  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${data}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => await axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${data}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -35,12 +34,12 @@ export function filterData(data) {
       })
     })
   }
-}
+
 
 
 export function sortData(column, dir) {
   
-  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => await axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -55,10 +54,9 @@ export function sortData(column, dir) {
       })
     })
   }
-}
 
 export function sortDataWithQuery(query, column, dir) {
-  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${query}&sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => await axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${query}&sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -73,7 +71,6 @@ export function sortDataWithQuery(query, column, dir) {
       })
     })
   }
-}
 
 export function setDataLoading() {
   return {
