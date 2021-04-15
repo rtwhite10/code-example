@@ -2,7 +2,7 @@ import axios from 'axios'
 const k = '6022dc053f9eb665a1689373'
 
 export function getData() {
-  return dispatch => {axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => await axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -20,7 +20,7 @@ export function getData() {
 }
 
 export function filterData(data) {
-  return dispatch => {axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${data}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${data}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -40,7 +40,7 @@ export function filterData(data) {
 
 export function sortData(column, dir) {
   
-  return dispatch => {axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
@@ -58,7 +58,7 @@ export function sortData(column, dir) {
 }
 
 export function sortDataWithQuery(query, column, dir) {
-  return dispatch => {axios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${query}&sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
+  return async (dispatch) => awaitaxios.get(`https://sevenfiftyproducts-b8e9.restdb.io/rest/products?filter=${query}&sort=${column}&dir=${dir}&max=25`, {headers: {"x-apikey": k}})
     .then((res) => {
       const { data } = res;
       dispatch({
